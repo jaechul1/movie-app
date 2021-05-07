@@ -1,0 +1,57 @@
+--------------------------------------------------------------------------------------------------------------------------
+import React from "react"; 
+=>  no longer needed. CRA automatically does it.
+--------------------------------------------------------------------------------------------------------------------------
+import PropTypes from "prop-types";
+=>  PropTypes can check the types of props and whether some props are missing or not.
+--------------------------------------------------------------------------------------------------------------------------
+function App() {return <div className="App">something</div>;}
+=>  A function name should be in uppercase.
+--------------------------------------------------------------------------------------------------------------------------
+class App extends React.Component {
+    state = {}
+    someFunction = () => {}
+    render() {
+        return (
+            <div>
+                <button onClick={this.someFunction}></button>
+            </div>
+        )
+    }
+}
+=>  App class has every property of React.Component class
+    State is an object to hold changing data of the component and can only be used in class component.
+    React has onClick props in button, we don't need to add eventlistener or so as we've done in JS.
+    We can't say add = () => {this.state.count += 1} since React has no idea when to refresh render function.
+    Instead, we use setState() to order React to refresh render.
+--------------------------------------------------------------------------------------------------------------------------
+class App extends React.Component {
+    state = {count: 0,}
+    add = () => {this.setState({count: this.state.count + 1})}
+    render() {}
+}
+=>  NEVER WRITE THIS WAY. Always write a function to use internal value, not an external one,
+    this.state.count in this case, since it may cause an unexpected result.
+    
+Instead, WRITE THIS WAY:
+
+    add = () => {
+        this.setState(
+            (current) => {
+            current.count += 1;
+            return current;
+            }
+        );
+    }
+--------------------------------------------------------------------------------------------------------------------------
+life cycle method is the way how React creates(mounting), updates(updating), and removes(unmounting) a component.
+
+mounting phase calls...
+    constructor() -> getDerivedStateFromProps() -> render() -> componentDidMount()
+
+updating phase occurs when setState() is called and calls...
+    getDerivedStateFromProps() -> shouldComponentUpdate() -> render() -> componentDidUpdate()
+
+unmounting phase calls...
+    componentWillUnmount()
+--------------------------------------------------------------------------------------------------------------------------
