@@ -79,3 +79,6 @@ this.setState({movies: movies})
 For jsx components, we use "className" instead of "class" for React to distinguish class in JS from class in HTML.
 Similarly, we use "htmlFor" to replace html's <label for=...> in React.
 --------------------------------------------------------------------------------------------------------------------------
+When you build a navigation, you should not make a component Navigation consists of "a" tags with bunch of hrefs. 
+It will end up reloading the whole page as html does. Should use "Link" component from "react-router-dom" to use React.
+--------------------------------------------------------------------------------------------------------------------------

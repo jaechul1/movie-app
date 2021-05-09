@@ -1,0 +1,9 @@
+.loader {
+  margin-top: 25vh;
+  text-align: center;
+}
+
+.loader__text {
+  font-weight: 700;
+  font-size: 5vw;
+}

@@ -1,0 +1,17 @@
+.navigation {
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  padding: 30px 50px 80px 50px;
+}
+
+.navigation a {
+  text-decoration: none;
+  color: inherit;
+  font-size: 3.5vw;
+  font-weight: 700;
+}
+
+.navigation a + a {
+  margin-left: 10%;
+}
