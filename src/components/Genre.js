@@ -18,10 +18,6 @@ class Genre extends React.Component {
   componentDidMount() {
     this.getMovies();
   }
-  truncate = (str, last) =>
-    str.length < last
-      ? str
-      : `${str.substr(0, str.substr(0, last).lastIndexOf(" "))}...`;
   renderMovies(movies) {
     return movies.map((movie) => {
       return (
@@ -30,9 +26,11 @@ class Genre extends React.Component {
           id={movie.id}
           year={movie.year}
           title={movie.title}
-          summary={this.truncate(movie.summary, 200)}
+          summary={movie.summary}
           poster={movie.medium_cover_image}
-          genres={movie.genres}
+          large_poster={movie.large_cover_image}
+          rating={movie.rating}
+          runtime={movie.runtime}
         />
       );
     });

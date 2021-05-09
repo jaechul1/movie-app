@@ -8,7 +8,7 @@ class Fantasy extends Genre {
         data: { movies },
       },
     } = await axios.get(
-      "https://yts-proxy.now.sh/list_movies.json?sort_by=download_count&minimum_rating=7&genre=fantasy"
+      "https://yts-proxy.now.sh/list_movies.json?sort_by=download_count&minimum_rating=7&genre=fantasy&limit=50"
     );
     this.setState({ movies, isLoading: false });
   }

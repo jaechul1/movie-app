@@ -20,31 +20,12 @@ body {
   margin-top: 10px;
 }
 
+.movie-container {
+  width: 80%;
+}
+
 .movie img {
   border-radius: 10%;
   box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.8);
-  width: 80%;
-}
-
-.movie .movie__data {
-  width: 80%;
-}
-
-.movie__genres {
-  display: flex;
-  flex-direction: column;
-}
-
-.movie__title {
-  font-size: 2.5vw;
-}
-
-.movie__genre {
-  font-size: 1.4vw;
-  opacity: 0.5;
-}
-
-.movie__year,
-.movie__summary {
-  font-size: 1.8vw;
+  width: 100%;
 }

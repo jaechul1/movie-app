@@ -1,7 +1,12 @@
 import React from "react";
+import "./Home.css";
 
 function Home() {
-  return <h1></h1>;
+  return (
+    <div className="film-icon">
+      <i className="fas fa-film"></i>
+    </div>
+  );
 }
 
 export default Home;

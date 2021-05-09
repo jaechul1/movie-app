@@ -4,11 +4,12 @@ import "./Navigation.css";
 
 function Navigation() {
   return (
-    <div class="navigation">
+    <div className="navigation">
       <Link to="/">Home</Link>
       <Link to="/documentary">Documentary</Link>
       <Link to="/fantasy">Fantasy</Link>
       <Link to="/horror">Horror</Link>
+      <Link to="/romance">Romance</Link>
     </div>
   );
 }
