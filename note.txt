@@ -44,7 +44,7 @@ Instead, WRITE THIS WAY:
         );
     }
 --------------------------------------------------------------------------------------------------------------------------
-life cycle method is the way how React creates(mounting), updates(updating), and removes(unmounting) a component.
+Life cycle method is the way how React creates(mounting), updates(updating), and removes(unmounting) a component.
 
 mounting phase calls...
     constructor() -> getDerivedStateFromProps() -> render() -> componentDidMount()
@@ -54,4 +54,28 @@ updating phase occurs when setState() is called and calls...
 
 unmounting phase calls...
     componentWillUnmount()
+--------------------------------------------------------------------------------------------------------------------------
+async getMovies() {
+    const movies = await axios.get("...");
+}
+=>  It makes getMovies() asynchronized so that we can use "await" for axios to get data from the url,
+    which works same as then()
+--------------------------------------------------------------------------------------------------------------------------
+const {
+    data: {
+        data: { movies },
+    },
+} = await axios.get("https://yts-proxy.now.sh/list_movies.json");
+this.setState({ movies })
+
+is equal to
+
+const moviesObj = await axios.get("https://yts-proxy.now.sh/list_movies.json");
+const movies = moviesObj.data.data.movies
+this.setState({movies: movies})
+
+=>  We can use the upper case's grammar thanks to ES6.
+--------------------------------------------------------------------------------------------------------------------------
+For jsx components, we use "className" instead of "class" for React to distinguish class in JS from class in HTML.
+Similarly, we use "htmlFor" to replace html's <label for=...> in React.
 --------------------------------------------------------------------------------------------------------------------------
